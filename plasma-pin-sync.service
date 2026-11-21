@@ -1,0 +1,12 @@
+[Unit]
+Description=Sync pinned apps between Plasma task managers
+After=plasma-plasmashell.service
+PartOf=graphical-session.target
+
+[Service]
+ExecStart=%h/.local/bin/plasma-pin-sync
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=graphical-session.target
